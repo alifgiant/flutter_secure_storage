@@ -62,6 +62,9 @@ public class FlutterSecureStorage {
 
     public boolean containsKey(String key) {
         ensureInitialized();
+        if (preferences == null) {
+            return false;
+        }
         return preferences.contains(key);
     }
 
